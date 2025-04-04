@@ -369,6 +369,47 @@ nav {
   }
 }
 
+
+@media (max-width: 768px) {
+  .mobile-nav {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.85);
+    display: flex;
+    justify-content: space-around;
+    padding: 0.4rem 0;
+    z-index: 9999;
+    border-top: 1px solid #444;
+  }
+
+  .mobile-nav a {
+    color: white;
+    font-size: 0.8em;
+    text-align: center;
+    text-decoration: none;
+  }
+
+  .mobile-nav i {
+    font-size: 1.2em;
+    display: block;
+    margin-bottom: 0.2rem;
+    color: #ffd700;
+  }
+}
+
+
+.mobile-only {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .mobile-only {
+    display: block;
+  }
+}
+
 </style>
 </head>
 <body>
@@ -586,6 +627,13 @@ nav {
   <p>Vaše osobní údaje chráníme v souladu s <a href="#">GDPR</a>.</p>
   <p>© 2025 Centrum služeb Kroměříž – <a href="https://www.jan-muller.cz">jan-muller.cz</a></p>
 </footer>
+
+
+<div class="mobile-only"><div class="mobile-nav">
+  <a href="#uvod"><i class="fas fa-home"></i><br>Úvod</a>
+  <a href="#poradci"><i class="fas fa-users"></i><br>Poradci</a>
+  <a href="#lokace"><i class="fas fa-map-marker-alt"></i><br>Mapa</a>
+</div>
 
 </body>
 </html>
