@@ -216,35 +216,41 @@
       td:nth-of-type(3)::before { content: "Kontakt"; }
     }
     
-    tbody tr {
-      opacity: 0;
-      transform: translateY(10px);
-      animation: fadeUp 1s ease-out forwards;
+    .cards-mobile {
+      display: none;
     }
 
-    tbody tr:nth-child(1) { animation-delay: 0.3s; }
-    tbody tr:nth-child(2) { animation-delay: 0.5s; }
-    tbody tr:nth-child(3) { animation-delay: 0.7s; }
-    tbody tr:nth-child(4) { animation-delay: 0.9s; }
-
-    @keyframes fadeUp {
-      to {
-        opacity: 1;
-        transform: translateY(0);
+    @media (max-width: 768px) {
+      table {
+        display: none;
       }
-    }
 
-    td a:hover {
-      animation: shake 0.4s ease-in-out;
-      display: inline-block;
-    }
+      .cards-mobile {
+        display: block;
+        margin-top: 2rem;
+      }
 
-    @keyframes shake {
-      0% { transform: rotate(0deg); }
-      25% { transform: rotate(4deg); }
-      50% { transform: rotate(-4deg); }
-      75% { transform: rotate(4deg); }
-      100% { transform: rotate(0deg); }
+      .card {
+        background: rgba(255, 255, 255, 0.05);
+        padding: 1rem;
+        margin-bottom: 1.5rem;
+        border-radius: 10px;
+        backdrop-filter: blur(4px);
+        box-shadow: 0 0 8px rgba(0,0,0,0.3);
+      }
+
+      .card p {
+        margin: 0.5rem 0;
+      }
+
+      .card a {
+        color: #ffd700;
+        font-weight: bold;
+      }
+
+      .card a:hover {
+        text-decoration: underline;
+      }
     }
     </style>
 </head>
@@ -297,6 +303,32 @@
         </tr>
     </tbody>
     </table>
+<div class="cards-mobile">
+
+        <div class="card">
+          <p><i class="fas fa-user icon"></i><strong>Jan Müller</strong></p>
+          <p>💻 Tvorba webu, oprava počítačů, IT poradenství</p>
+          <p><a href="tel:+420776202437">📞 776 202 437</a></p>
+        </div>
+
+        <div class="card">
+          <p><i class="fas fa-user icon"></i><strong>Eva Nováková</strong></p>
+          <p>🚗 Pojištění vozidel, životní pojištění</p>
+          <p><a href="tel:+420775123456">📞 775 123 456</a></p>
+        </div>
+
+        <div class="card">
+          <p><i class="fas fa-user icon"></i><strong>Kamila Štěpánková</strong></p>
+          <p>👵 Pomoc seniorům, sociální služby</p>
+          <p><a href="tel:+420774987321">📞 774 987 321</a></p>
+        </div>
+
+        <div class="card">
+          <p><i class="fas fa-user icon"></i><strong>Lukáš Gorgoň</strong></p>
+          <p>💰 Finanční poradenství</p>
+          <p><a href="tel:+420739456789">📞 739 456 789</a></p>
+        </div>
+</div>
   </div>
 </section>
 
