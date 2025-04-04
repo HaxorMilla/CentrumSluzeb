@@ -19,7 +19,7 @@
     }
 
     body::before {
-  backdrop-filter: blur(1px);
+  backdrop-filter: none;
       content: "";
       position: fixed;
       top: 0; left: 0;
@@ -302,6 +302,12 @@ nav {
         text-decoration: underline;
       }
     }
+    
+    @media (max-width: 768px) {
+      header h1 {
+        font-size: 5em;
+      }
+    }
     </style>
 </head>
 <body>
@@ -319,7 +325,7 @@ nav {
 
 <section id="poradci">
   <div class="container">
-    <h2><i class="fas fa-handshake icon"></i>Přijďte se poradit. Bez čekání a bez placení.</h2>
+    <h2><i class="fas fa-handshake icon"></i>Konzultace zdarma</h2>
 
     <table>
       <thead>
