@@ -6,30 +6,53 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Centrum služeb Kroměříž</title>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <style>
     * { box-sizing: border-box; }
     html { scroll-behavior: smooth; }
     body {
       margin: 0;
-      padding: 0;
       font-family: 'Montserrat', sans-serif;
       background: url('Pozadi/pozadi.png') no-repeat center center fixed;
       background-size: cover;
-      position: relative;
       color: white;
     }
+
     body::before {
       content: "";
       position: fixed;
       top: 0; left: 0;
       width: 100%; height: 100%;
-      background: rgba(255,255,255,0.08); /* zesvětlení pozadí */
+      background: rgba(255,255,255,0.08);
       z-index: -1;
     }
 
+    nav {
+      position: fixed;
+      width: 100%;
+      top: 0;
+      left: 0;
+      background: rgba(0, 0, 0, 0.85);
+      padding: 0.5rem 2rem;
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      z-index: 1000;
+    }
+
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: #ffd700;
+    }
+
     header {
-      background: rgba(0,0,0,0.7);
-      padding: 4rem 2rem 2rem;
+      padding: 6rem 2rem 2rem;
       text-align: center;
     }
 
@@ -39,6 +62,7 @@
       font-weight: 700;
       color: #ffffff;
       margin: 0;
+      animation: fadeIn 2s ease-out;
     }
 
     header p {
@@ -46,12 +70,19 @@
       font-weight: 300;
       color: #f0f0f0;
       margin-top: 0.5rem;
+      animation: fadeIn 2.5s ease-out;
     }
 
     section {
       background-color: rgba(0, 0, 0, 0.55);
       padding: 3rem 2rem;
+      opacity: 0;
+      transform: translateY(20px);
+      animation: slideIn 1.2s forwards;
     }
+
+    section:nth-of-type(2) { animation-delay: 0.4s; }
+    section:nth-of-type(3) { animation-delay: 0.6s; }
 
     h2 {
       color: #ffffff;
@@ -95,12 +126,21 @@
       border-bottom: none;
     }
 
+    .icon {
+      margin-right: 8px;
+      color: #ffd700;
+    }
+
     iframe {
       width: 100%;
       height: 400px;
       border: none;
       border-radius: 10px;
       margin-top: 1rem;
+    }
+
+    .map-section {
+      margin-top: 4cm;
     }
 
     footer {
@@ -119,51 +159,119 @@
     a:hover {
       text-decoration: none;
     }
-  </style>
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    @keyframes slideIn {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  
+    @media (max-width: 768px) {
+      nav {
+        flex-direction: column;
+        gap: 0.5rem;
+        padding: 1rem;
+      }
+
+      header h1 {
+        font-size: 2.5em;
+      }
+
+      header p {
+        font-size: 1em;
+      }
+
+      table, thead, tbody, th, td, tr {
+        display: block;
+      }
+
+      th {
+        display: none;
+      }
+
+      td {
+        position: relative;
+        padding-left: 50%;
+        margin-bottom: 1rem;
+      }
+
+      td::before {
+        position: absolute;
+        top: 0;
+        left: 1rem;
+        width: 45%;
+        white-space: nowrap;
+        color: #ffd700;
+        font-weight: bold;
+      }
+
+      td:nth-of-type(1)::before { content: "Jméno"; }
+      td:nth-of-type(2)::before { content: "Zaměření"; }
+      td:nth-of-type(3)::before { content: "Kontakt"; }
+    }
+    </style>
 </head>
 <body>
 
-<header>
+<nav>
+  <a href="#uvod">Úvod</a>
+  <a href="#poradci">Poradci</a>
+  <a href="#lokace">Kde nás najdete</a>
+</nav>
+
+<header id="uvod">
   <h1>Centrum Služeb Kroměříž</h1>
   <p>Pomáháme s jistotou a lidským přístupem</p>
 </header>
 
-<section>
+<section id="poradci">
   <div class="container">
-    <h2>Konzultace zdarma pro každého</h2>
+    <h2><i class="fas fa-handshake icon"></i>Přijďte se poradit. Bez čekání a bez placení.</h2>
 
     <table>
       <thead>
         <tr>
-          <th>Jméno poradce</th>
-          <th>Zaměření</th>
-          <th>Kontakt</th>
+          <th><i class="fas fa-user icon"></i>Jméno poradce</th>
+          <th><i class="fas fa-briefcase icon"></i>Zaměření</th>
+          <th><i class="fas fa-phone icon"></i>Kontakt</th>
         </tr>
       </thead>
       <tbody>
         <tr>
-          <td>Jan Müller</td>
-          <td>Tvorba webu, oprava počítačů, IT poradenství</td>
-          <td>Tel: 776 202 437</td>
+          <td><i class="fas fa-user icon"></i>Jan Müller</td>
+          <td>💻 Tvorba webu, oprava počítačů, IT poradenství</td>
+          <td><a href="tel:+420776202437">📞 776 202 437</a></td>
         </tr>
         <tr>
-          <td>Eva Nováková</td>
-          <td>Pojištění vozidel, životní pojištění</td>
-          <td>Tel: 775 123 456</td>
+          <td><i class="fas fa-user icon"></i>Eva Nováková</td>
+          <td>🚗 Pojištění vozidel, životní pojištění</td>
+          <td><a href="tel:+420775123456">📞 775 123 456</a></td>
         </tr>
         <tr>
-          <td>Kamila Štěpánková</td>
-          <td>Pomoc seniorům, sociální služby</td>
-          <td>Tel: 774 987 321</td>
+          <td><i class="fas fa-user icon"></i>Kamila Štěpánková</td>
+          <td>👵 Pomoc seniorům, sociální služby</td>
+          <td><a href="tel:+420774987321">📞 774 987 321</a></td>
         </tr>
-      </tbody>
+      
+        <tr>
+          <td><i class="fas fa-user icon"></i>Lukáš Gorgoň</td>
+          <td>💰 Finanční poradenství</td>
+          <td><a href="tel:+420739456789">📞 739 456 789</a></td>
+        </tr>
+    </tbody>
     </table>
   </div>
 </section>
 
-<section>
+<section id="lokace" class="map-section">
   <div class="container">
-    <h2>Kde nás najdete:</h2>
+    <h2><i class="fas fa-map-marker-alt icon"></i>Kde nás najdete:</h2>
     <p>Ulice Šafaříkova v Kroměříži</p>
     <iframe src="https://www.google.com/maps/embed?pb=!4v1743772084259!6m8!1m7!1sygY_P99qwrPtes2Xjdw-VA!2m2!1d49.29682287569423!2d17.39435045367909!3f82.76086632603243!4f-20.45210568264703!5f0.7820865974627469"
             loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
