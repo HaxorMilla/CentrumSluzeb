@@ -19,13 +19,7 @@ body {
   color: white;
 }
 
-@media (max-width: 768px) {
-  body {
-    background-size: contain;
-    background-position: top center;
-    background-attachment: scroll;
-  }
-}
+
 
 
     body::before {
@@ -319,7 +313,15 @@ nav {
         font-size: 5.5em;
       }
     }
-    </style>
+    
+@media (max-width: 768px) {
+  body {
+    background: url('Pozadi/mobile.png') no-repeat top center fixed;
+    background-size: cover;
+  }
+}
+
+</style>
 </head>
 <body>
 
