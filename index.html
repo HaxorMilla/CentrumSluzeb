@@ -10,13 +10,23 @@
   <style>
     * { box-sizing: border-box; }
     html { scroll-behavior: smooth; }
-    body {
-      margin: 0;
-      font-family: 'Montserrat', sans-serif;
-      background: url('Pozadi/pozadi.png') no-repeat center center fixed;
-      background-size: cover;
-      color: white;
-    }
+    
+body {
+  margin: 0;
+  font-family: 'Montserrat', sans-serif;
+  background: url('Pozadi/pozadi.png') no-repeat center center fixed;
+  background-size: cover;
+  color: white;
+}
+
+@media (max-width: 768px) {
+  body {
+    background-size: contain;
+    background-position: top center;
+    background-attachment: scroll;
+  }
+}
+
 
     body::before {
   backdrop-filter: none;
