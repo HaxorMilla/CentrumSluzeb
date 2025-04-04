@@ -1,0 +1,521 @@
+
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Centrum služeb Kroměříž</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    
+body {
+  margin: 0;
+  font-family: 'Montserrat', sans-serif;
+  background: url('Pozadi/pozadi.png') no-repeat center center fixed;
+  background-size: cover;
+  color: white;
+}
+
+
+
+
+    body::before {
+  backdrop-filter: none;
+      content: "";
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(255,255,255,0.08);
+      z-index: -1;
+    }
+
+    @media (max-width: 768px) { nav { display: none; } }
+nav {
+      position: fixed;
+      width: 100%;
+      top: 0;
+      left: 0;
+      background: rgba(0, 0, 0, 0.85);
+      padding: 0.5rem 2rem;
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      z-index: 1000;
+    }
+
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: #ffd700;
+    }
+
+    header {
+  padding-bottom: 1rem;
+  padding-top: 10rem;
+      padding: 6rem 2rem 2rem;
+      text-align: center;
+    }
+
+    header h1 {
+  font-size: 13em;
+  padding-top: 1rem;
+      font-family: 'Dancing Script', cursive;
+      font-size: 4em;
+      font-weight: 700;
+      color: #ffffff;
+      margin: 0;
+      animation: fadeIn 2s ease-out;
+    }
+
+    header p {
+      font-size: 1.2em;
+      font-weight: 300;
+      color: #f0f0f0;
+      margin-top: 0.5rem;
+      animation: fadeIn 2.5s ease-out;
+    }
+
+    section {
+  margin-top: 1rem;
+      background-color: rgba(0, 0, 0, 0.55);
+      padding: 3rem 2rem;
+      opacity: 0;
+      transform: translateY(20px);
+      animation: slideIn 1.2s forwards;
+    }
+
+    section:nth-of-type(2) {
+  animation-delay: 0.4s;
+  margin-top: 5rem;
+}
+    section:nth-of-type(3) { animation-delay: 0.6s; }
+
+    h2 {
+      color: #ffffff;
+      font-size: 2em;
+      margin-bottom: 1rem;
+      font-weight: 600;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 1.5rem;
+      border-radius: 10px;
+      overflow: hidden;
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: none;
+    }
+
+    th, td {
+      padding: 16px;
+      text-align: left;
+      color: #fff;
+    }
+
+    th {
+      background: rgba(255, 255, 255, 0.08);
+      font-weight: 600;
+      border-bottom: 1px solid #333;
+    }
+
+    td {
+      border-bottom: 1px solid #444;
+    }
+
+    tr:last-child td {
+      border-bottom: none;
+    }
+
+    .icon {
+      margin-right: 8px;
+      color: #ffd700;
+    }
+
+    iframe {
+      width: 100%;
+      height: 400px;
+      border: none;
+      border-radius: 10px;
+      margin-top: 1rem;
+    }
+
+    .map-section {
+  margin-top: 1rem;
+      margin-top: 4cm;
+    }
+
+    footer {
+      background-color: rgba(0, 0, 0, 0.85);
+      text-align: center;
+      padding: 1.5rem;
+      color: #ccc;
+      font-size: 0.9em;
+    }
+
+    a {
+      color: #ffffff;
+      text-decoration: underline;
+    }
+
+    a:hover {
+      text-decoration: none;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    @keyframes slideIn {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  
+    @media (max-width: 768px) {
+      @media (max-width: 768px) { nav { display: none; } }
+nav {
+        flex-direction: column;
+        gap: 0.5rem;
+        padding: 1rem;
+      }
+
+      header h1 {
+  font-size: 13em;
+  padding-top: 1rem;
+        font-size: 2.5em;
+      }
+
+      header p {
+        font-size: 1em;
+      }
+
+      table, thead, tbody, th, td, tr {
+        display: block;
+      }
+
+      th {
+        display: none;
+      }
+
+      td {
+        position: relative;
+        padding-left: 50%;
+        margin-bottom: 1rem;
+      }
+
+      td::before {
+        position: absolute;
+        top: 0;
+        left: 1rem;
+        width: 45%;
+        white-space: nowrap;
+        color: #ffd700;
+        font-weight: bold;
+      }
+
+      td:nth-of-type(1)::before { content: "Jméno"; }
+      td:nth-of-type(2)::before { content: "Zaměření"; }
+      td:nth-of-type(3)::before { content: "Kontakt"; }
+    }
+    
+    .cards-mobile {
+      display: none;
+    }
+
+    @media (max-width: 768px) {
+      table {
+        display: none;
+      }
+
+      .cards-mobile {
+        display: block;
+        margin-top: 2rem;
+      }
+
+      .card {
+        background: rgba(255, 255, 255, 0.05);
+        padding: 1rem;
+        margin-bottom: 1.5rem;
+        border-radius: 10px;
+        backdrop-filter: none;
+        box-shadow: 0 0 8px rgba(0,0,0,0.3);
+      }
+
+      .card p {
+        margin: 0.5rem 0;
+      }
+
+      .card a {
+        color: #ffd700;
+        font-weight: bold;
+      }
+
+      .card a:hover {
+        text-decoration: underline;
+      }
+    }
+    
+    @media (max-width: 768px) {
+      header {
+  padding-bottom: 1rem;
+  padding-top: 10rem;
+        padding-top: 8rem;
+      }
+
+      .cards-mobile {
+        display: block;
+        margin-top: 2rem;
+      }
+
+      .card {
+        background: rgba(255, 255, 255, 0.05);
+        padding: 1rem;
+        margin-bottom: 1.5rem;
+        border-radius: 10px;
+        backdrop-filter: none;
+        box-shadow: 0 0 8px rgba(0,0,0,0.2);
+        border: 1px solid rgba(255, 215, 0, 0.35); /* jemný zlatý okraj */
+      }
+
+      .card p {
+        margin: 0.5rem 0;
+      }
+
+      .card a {
+        color: #ffd700;
+        font-weight: bold;
+      }
+
+      .card a:hover {
+        text-decoration: underline;
+      }
+    }
+    
+    @media (max-width: 768px) {
+      header h1 {
+        margin-bottom: 2rem;
+        font-size: 5.5em;
+      }
+    }
+    
+@media (max-width: 768px) {
+  body {
+    background: url('Pozadi/mobile.png') no-repeat top center fixed;
+    background-size: cover;
+  }
+}
+
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="#uvod">Úvod</a>
+  <a href="#poradci">Poradci</a>
+  <a href="#lokace">Kde nás najdete</a>
+</nav>
+
+<header id="uvod">
+  <h1>Centrum Služeb Kroměříž</h1>
+  <p>Pomáháme s jistotou a lidským přístupem</p>
+</header>
+
+<section id="poradci">
+  <div class="container">
+    <h2><i class="fas fa-handshake icon"></i>Konzultace zdarma</h2>
+
+    <table>
+      <thead>
+        <tr>
+          <th><i class="fas fa-user icon"></i>Jméno poradce</th>
+          <th><i class="fas fa-briefcase icon"></i>Zaměření</th>
+          <th><i class="fas fa-phone icon"></i>Kontakt</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><i class="fas fa-user icon"></i>Jan Müller</td>
+          <td>💻 Tvorba webu, oprava počítačů, IT poradenství</td>
+          <td><a href="tel:+420776202437">📞 776 202 437</a></td>
+        </tr>
+        <tr>
+          <td><i class="fas fa-user icon"></i>Eva Nováková</td>
+          <td>🚗 Pojištění vozidel, životní pojištění</td>
+          <td><a href="tel:+420775123456">📞 775 123 456</a></td>
+        </tr>
+        <tr>
+          <td><i class="fas fa-user icon"></i>Kamila Štěpánková</td>
+          <td>👵 Pomoc seniorům, sociální služby</td>
+          <td><a href="tel:+420774987321">📞 774 987 321</a></td>
+        </tr>
+      
+        <tr>
+          <td><i class="fas fa-user icon"></i>Lukáš Gorgoň</td>
+          <td>💰 Finanční poradenství</td>
+          <td><a href="tel:+420739456789">📞 739 456 789</a></td>
+        </tr>
+    
+<tr>
+  <td><i class="fas fa-user icon"></i>Petra Kubešová & Mira Okénka</td>
+  <td>📊 Finance – pojištění, úvěry, investice, spoření</td>
+  <td><a href="tel:+420777111222">📞 777 111 222</a></td>
+</tr>
+<tr>
+  <td><i class="fas fa-user icon"></i>Jakub Dujíček</td>
+  <td>🏘️ Reality – prodej a pronájem nemovitostí</td>
+  <td><a href="tel:+420777333444">📞 777 333 444</a></td>
+</tr>
+<tr>
+  <td><i class="fas fa-user icon"></i>Staňa Střechy</td>
+  <td>🏗️ Rekonstrukce střech (S&M)</td>
+  <td><a href="tel:+420777555666">📞 777 555 666</a></td>
+</tr>
+<tr>
+  <td><i class="fas fa-user icon"></i>P. Horvát</td>
+  <td>🧱 StavPro – rekonstrukce nemovitostí</td>
+  <td><a href="tel:+420777777888">📞 777 777 888</a></td>
+</tr>
+<tr>
+  <td><i class="fas fa-user icon"></i>František Fiury</td>
+  <td>⚖️ Odškodnění – nehody, pracovní úrazy</td>
+  <td><a href="tel:+420700123456">📞 700 123 456</a></td>
+</tr>
+<tr>
+  <td><i class="fas fa-user icon"></i>První Česká Energie</td>
+  <td>⚡ Energetické poradenství, spolupráce</td>
+  <td><a href="tel:+420707070707">📞 707 070 707</a></td>
+</tr>
+<tr>
+  <td><i class="fas fa-user icon"></i>Účetnictví & Bidli</td>
+  <td>📚 Družstevní bydlení – úvěry bez příjmu</td>
+  <td><a href="tel:+420708708708">📞 708 708 708</a></td>
+</tr>
+<tr>
+  <td><i class="fas fa-user icon"></i>Podroužek (iTrade)</td>
+  <td>💼 Investice – výnosy 1 % měsíčně</td>
+  <td><a href="tel:+420709709709">📞 709 709 709</a></td>
+</tr>
+<tr>
+  <td><i class="fas fa-user icon"></i>P. Filan</td>
+  <td>💸 Nebankovní úvěry – nouzové řešení</td>
+  <td><a href="tel:+420710710710">📞 710 710 710</a></td>
+</tr>
+<tr>
+  <td><i class="fas fa-user icon"></i>René Fochr</td>
+  <td>🌐 Webové stránky a online řešení</td>
+  <td><a href="tel:+420711711711">📞 711 711 711</a></td>
+</tr>
+</tbody>
+    </table>
+<div class="cards-mobile">
+
+        <div class="card">
+          <p><i class="fas fa-user icon"></i><strong>Jan Müller</strong></p>
+          <p>💻 Tvorba webu, oprava počítačů, IT poradenství</p>
+          <p><a href="tel:+420776202437">📞 776 202 437</a></p>
+        </div>
+
+        <div class="card">
+          <p><i class="fas fa-user icon"></i><strong>Eva Nováková</strong></p>
+          <p>🚗 Pojištění vozidel, životní pojištění</p>
+          <p><a href="tel:+420775123456">📞 775 123 456</a></p>
+        </div>
+
+        <div class="card">
+          <p><i class="fas fa-user icon"></i><strong>Kamila Štěpánková</strong></p>
+          <p>👵 Pomoc seniorům, sociální služby</p>
+          <p><a href="tel:+420774987321">📞 774 987 321</a></p>
+        </div>
+
+        <div class="card">
+          <p><i class="fas fa-user icon"></i><strong>Lukáš Gorgoň</strong></p>
+          <p>💰 Finanční poradenství</p>
+          <p><a href="tel:+420739456789">📞 739 456 789</a></p>
+        </div>
+
+<div class="card">
+  <p><i class="fas fa-user icon"></i><strong>Petra Kubešová & Mira Okénka</strong></p>
+  <p>📊 Finance – pojištění, úvěry, investice, spoření</p>
+  <p><a href="tel:+420777111222">📞 777 111 222</a></p>
+</div>
+<div class="card">
+  <p><i class="fas fa-user icon"></i><strong>Jakub Dujíček</strong></p>
+  <p>🏘️ Reality – prodej a pronájem nemovitostí</p>
+  <p><a href="tel:+420777333444">📞 777 333 444</a></p>
+</div>
+<div class="card">
+  <p><i class="fas fa-user icon"></i><strong>Staňa Střechy</strong></p>
+  <p>🏗️ Rekonstrukce střech (S&M)</p>
+  <p><a href="tel:+420777555666">📞 777 555 666</a></p>
+</div>
+<div class="card">
+  <p><i class="fas fa-user icon"></i><strong>P. Horvát</strong></p>
+  <p>🧱 StavPro – rekonstrukce nemovitostí</p>
+  <p><a href="tel:+420777777888">📞 777 777 888</a></p>
+</div>
+<div class="card">
+  <p><i class="fas fa-user icon"></i><strong>František Fiury</strong></p>
+  <p>⚖️ Odškodnění – nehody, pracovní úrazy</p>
+  <p><a href="tel:+420700123456">📞 700 123 456</a></p>
+</div>
+<div class="card">
+  <p><i class="fas fa-user icon"></i><strong>První Česká Energie</strong></p>
+  <p>⚡ Energetické poradenství, spolupráce</p>
+  <p><a href="tel:+420707070707">📞 707 070 707</a></p>
+</div>
+<div class="card">
+  <p><i class="fas fa-user icon"></i><strong>Účetnictví & Bidli</strong></p>
+  <p>📚 Družstevní bydlení – úvěry bez příjmu</p>
+  <p><a href="tel:+420708708708">📞 708 708 708</a></p>
+</div>
+<div class="card">
+  <p><i class="fas fa-user icon"></i><strong>Podroužek (iTrade)</strong></p>
+  <p>💼 Investice – výnosy 1 % měsíčně</p>
+  <p><a href="tel:+420709709709">📞 709 709 709</a></p>
+</div>
+<div class="card">
+  <p><i class="fas fa-user icon"></i><strong>P. Filan</strong></p>
+  <p>💸 Nebankovní úvěry – nouzové řešení</p>
+  <p><a href="tel:+420710710710">📞 710 710 710</a></p>
+</div>
+<div class="card">
+  <p><i class="fas fa-user icon"></i><strong>René Fochr</strong></p>
+  <p>🌐 Webové stránky a online řešení</p>
+  <p><a href="tel:+420711711711">📞 711 711 711</a></p>
+</div>
+
+</div>
+  </div>
+</section>
+
+<section id="lokace" class="map-section">
+  <div class="container">
+    <h2><i class="fas fa-map-marker-alt icon"></i>Kde nás najdete:</h2>
+    <p>Ulice Šafaříkova v Kroměříži</p>
+    <iframe src="https://www.google.com/maps/embed?pb=!4v1743772084259!6m8!1m7!1sygY_P99qwrPtes2Xjdw-VA!2m2!1d49.29682287569423!2d17.39435045367909!3f82.76086632603243!4f-20.45210568264703!5f0.7820865974627469"
+            loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+  </div>
+</section>
+
+<footer>
+  <p>© 2025 Centrum služeb Kroměříž – <a href="https://www.jan-muller.cz">jan-muller.cz</a></p>
+</footer>
+
+</body>
+</html>
