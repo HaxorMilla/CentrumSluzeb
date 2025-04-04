@@ -1,1 +1,1 @@
-# CentrumSlu-eb
+# CentrumSluzeb
