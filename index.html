@@ -28,7 +28,8 @@
       z-index: -1;
     }
 
-    nav {
+    @media (max-width: 768px) { nav { display: none; } }
+nav {
       position: fixed;
       width: 100%;
       top: 0;
@@ -53,6 +54,7 @@
     }
 
     header {
+  padding-bottom: 1rem;
   padding-top: 10rem;
       padding: 6rem 2rem 2rem;
       text-align: center;
@@ -78,7 +80,7 @@
     }
 
     section {
-  margin-top: 2rem;
+  margin-top: 1rem;
       background-color: rgba(0, 0, 0, 0.55);
       padding: 3rem 2rem;
       opacity: 0;
@@ -148,7 +150,7 @@
     }
 
     .map-section {
-  margin-top: 2rem;
+  margin-top: 1rem;
       margin-top: 4cm;
     }
 
@@ -182,7 +184,8 @@
     }
   
     @media (max-width: 768px) {
-      nav {
+      @media (max-width: 768px) { nav { display: none; } }
+nav {
         flex-direction: column;
         gap: 0.5rem;
         padding: 1rem;
@@ -266,6 +269,7 @@
     
     @media (max-width: 768px) {
       header {
+  padding-bottom: 1rem;
   padding-top: 10rem;
         padding-top: 8rem;
       }
