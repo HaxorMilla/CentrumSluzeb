@@ -370,23 +370,24 @@ nav {
 }
 
 
+
 @media (max-width: 768px) {
   .mobile-nav {
     position: fixed;
-    bottom: 0;
+    top: 0;
     left: 0;
     width: 100%;
-    background: rgba(0, 0, 0, 0.85);
+    background: rgba(0, 0, 0, 0.9);
     display: flex;
     justify-content: space-around;
-    padding: 0.4rem 0;
+    padding: 0.6rem 0 0.4rem 0;
     z-index: 9999;
-    border-top: 1px solid #444;
+    border-bottom: 1px solid #444;
   }
 
   .mobile-nav a {
     color: white;
-    font-size: 0.8em;
+    font-size: 0.85em;
     text-align: center;
     text-decoration: none;
   }
@@ -397,7 +398,12 @@ nav {
     margin-bottom: 0.2rem;
     color: #ffd700;
   }
+
+  body {
+    padding-top: 50px;
+  }
 }
+
 
 
 .mobile-only {
