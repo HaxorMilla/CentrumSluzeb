@@ -371,6 +371,21 @@ nav {
 
 
 
+
+
+
+
+.mobile-only {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .mobile-only {
+    display: block;
+  }
+}
+
+
 @media (max-width: 768px) {
   .mobile-nav {
     position: fixed;
@@ -399,20 +414,18 @@ nav {
     color: #ffd700;
   }
 
+  .mobile-only {
+    display: block;
+  }
+
   body {
     padding-top: 50px;
   }
 }
 
-
-
-.mobile-only {
-  display: none;
-}
-
-@media (max-width: 768px) {
+@media (min-width: 769px) {
   .mobile-only {
-    display: block;
+    display: none;
   }
 }
 
@@ -442,7 +455,15 @@ nav {
 
 <section id="poradci">
   <div class="container">
-    <h2><i class="fas fa-handshake icon"></i>Konzultace zdarma</h2>
+    
+
+
+<h2 style="text-align:center; margin-bottom: 1.8rem; font-size: 2rem; color: white;">
+  Konzultace zdarma
+</h2>
+
+
+
 
     <table>
       <thead>
